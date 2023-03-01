@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ssa/screens/game_screen/widgets/coin.dart';
 
 import '../../../controllers/game_controller.dart';
 import 'cell.dart';
 
 class BoardColumn extends StatelessWidget {
   final GameController gameController = Get.find<GameController>();
-  final List<int> columnOfPlayerChips;
-  final int columnNumber;
+  final List<int>? columnOfPlayerChips;
+  final int? columnNumber;
 
   BoardColumn({
-    required this.columnOfPlayerChips,
-    required this.columnNumber,
-  });
+     this.columnNumber,
+      this.columnOfPlayerChips,
+  }
+  );
+
+
 
   List<Cell> _buildBoardColumn() {
-    return columnOfPlayerChips.reversed
+    return columnOfPlayerChips!.reversed
         .map((number) => number == 1
             ? Cell(
                 currentCellMode: cellMode.BLUE,
@@ -34,7 +38,7 @@ class BoardColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        gameController.playColumn(columnNumber);
+        gameController.playColumn(columnNumber!);
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,

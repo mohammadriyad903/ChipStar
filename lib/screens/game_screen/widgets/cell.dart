@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ssa/screens/game_screen/widgets/board_column.dart';
 
 import '../../../controllers/game_controller.dart';
 import 'board.dart';
@@ -14,6 +15,7 @@ enum cellMode {
 class Cell extends StatelessWidget {
   final GameController gameController = Get.find<GameController>();
   Board board = Board();
+  BoardColumn boardColumn = BoardColumn();
 
   final currentCellMode;
 
@@ -22,6 +24,7 @@ class Cell extends StatelessWidget {
   });
 
   Coin _buildCoin() {
+    boardColumn.columnOfPlayerChips!.last;
     if (this.currentCellMode == cellMode.BLUE) {
       return Coin(
         coinColor: Color.fromARGB(255, 51, 132, 199),

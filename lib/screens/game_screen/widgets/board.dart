@@ -16,8 +16,8 @@ class _BoardState extends State<Board> {
 
     return gameController.board
         .map((boardColumn) => BoardColumn(
-              columnOfPlayerChips: boardColumn,
-              columnNumber: currentColumnNumber++,
+               columnNumber: currentColumnNumber++,
+               columnOfPlayerChips: boardColumn,
             ))
         .toList();
   }

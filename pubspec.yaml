@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.5
   flutter_native_splash: ^2.2.18
   fluttertoast: ^8.2.1
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
